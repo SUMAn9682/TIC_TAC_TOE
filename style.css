@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: chartreuse;
+}
+
+body {
+    background-image: url("");
+}
+
+nav {
+    background-image: url("navber.png");
+    color: rgb(255, 253, 253);
+    height: 12vh;
+    font-size: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+nav:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.gameContainer {
+    background-image: url("gamecontainer.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    padding: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 12vw);
+    grid-template-columns: repeat(3, 12vw);
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    gap: 5px;
+}
+
+.box {
+    border: 3px solid yellow;
+    font-size: 10vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.box:hover {
+    background-color: rgb(20, 206, 64);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.gameInfo {
+    padding: 20px;
+    font-family: "Playwrite HU", cursive;
+    text-align: center;
+}
+
+#reset {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: rgb(16, 61, 23);
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: medium;
+    font-weight: bolder;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+#reset:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    background-color: rgb(24, 87, 35);
+}
+
+.info {
+    font-size: 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.imgbox img {
+    width: 10px;
+    display: none;
+    transition: width 0.5s ease, transform 0.5s;
+}
+
+.imgbox img.winner {
+    display: block;
+    width: 200px;
+    transform: rotate(10deg);
+}
+
+.winning {
+    background-color: red;
+    animation: pulse 1s infinite;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries for Smaller Devices */
+@media screen and (max-width: 800px) {
+    nav {
+        font-size: 4vh;
+        height: 10vh;
+    }
+
+    .gameContainer {
+        margin-top: 2vh;
+        padding: 10px;
+    }
+
+    .container {
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+        gap: 3px;
+    }
+
+    .box {
+        font-size: 15vw;
+    }
+
+    .gameInfo {
+        margin-top: 20px;
+    }
+
+    .info {
+        font-size: 1.2rem;
+    }
+
+    #reset {
+        padding: 8px 20px;
+        font-size: small;
+    }
+
+    .imgbox img.winner {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        grid-template-rows: repeat(3, 30vw);
+        grid-template-columns: repeat(3, 30vw);
+    }
+
+    .box {
+        font-size: 20vw;
+    }
+
+    .info {
+        font-size: 1rem;
+    }
+
+    #reset {
+        padding: 5px 15px;
+        font-size: x-small;
+    }
+
+    .imgbox img.winner {
+        width: 100px;
+    }
+}
